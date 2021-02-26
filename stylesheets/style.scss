@@ -84,6 +84,9 @@ $padding_20_60: 20px 96px;
         text-align: center;
         margin-left: 16px;
         cursor: pointer;
+        @media screen and (max-width: 768px) {
+          margin-left: 5px !important;
+        }
         .fa-search{
           width: 32px;
           height: 32px;
