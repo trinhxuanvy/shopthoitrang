@@ -613,19 +613,110 @@ $padding_20_0: 20px 0;
     }
   }
 
-  .categories-10{
-    padding: $padding_20_32;
-    @media screen and (max-width: 992px){
-      padding: $padding_20_16;
-    }
-    .header{
-      text-align: center;
-      .title{
-        font-size: 25px;
-        text-transform: uppercase;
+  .categories-6{
+    @include padding_cate();
+    overflow: hidden;
+    .product-sale{
+      .header{
+        @include cate_header();
+      }
+      .product{
+        padding: $padding_20_0;
+        .swiper-wrapper{
+          @include product_item_cate();
+          
+        }
+        .swiper-button-next::after, .swiper-button-prev::after{
+          content: '' !important;
+        }
+        .swiper-button-next, .swiper-button-prev{
+          width: 25px !important;
+          height: 25px !important;
+          display: block;
+          background-color: #727272;
+          color: #fff;
+          opacity: 0.5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          &:hover{
+            background-color: #252525;
+            transition: 0.2s;
+          }
+        }
       }
     }
   }
+
+  .categories-7{
+    @include padding_cate();
+    overflow: hidden;
+    .product-sale{
+      .header{
+        @include cate_header();
+      }
+      .product{
+        padding: $padding_20_0;
+        .swiper-wrapper{
+          @include product_item_cate();
+          
+        }
+        .swiper-button-next::after, .swiper-button-prev::after{
+          content: '' !important;
+        }
+        .swiper-button-next, .swiper-button-prev{
+          width: 25px !important;
+          height: 25px !important;
+          display: block;
+          background-color: #727272;
+          color: #fff;
+          opacity: 0.5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          &:hover{
+            background-color: #252525;
+            transition: 0.2s;
+          }
+        }
+      }
+    }
+  }
+
+  .categories-8{
+    padding: $padding_20_60;
+    @media screen and (max-width: 992px) {
+      padding: $padding_20_16;
+    }
+    
+    .banner{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media screen and (max-width: 576px) {
+        display: block;
+      }
+      .banner-item{
+        width: 49%;
+        overflow: hidden;
+        @media screen and (max-width: 576px) {
+          width: 100%;
+        }
+        .banner-link{
+          display: block;
+          transition: 0.4s;
+        }
+        &:hover{
+          .banner-link{
+            transform: scale(1.04);
+          }
+        }
+      }
+    }
+  }
+
 }
 
 .scroll-top{

@@ -83,7 +83,7 @@ $(document).ready(function () {
             changeW = 4;
             changeSpace = 30;
         }
-        var swiper = new Swiper('.swiper-product', {
+        var swiper = new Swiper('.swiper-product-5', {
             slidesPerView: changeW,
             slidesPerGroup: 1,
             spaceBetween: changeSpace,
@@ -96,6 +96,36 @@ $(document).ready(function () {
             navigation: {
                 nextEl: '.cate5-product-next',
                 prevEl: '.cate5-product-prev',
+            },
+        });
+        var swiper = new Swiper('.swiper-product-6', {
+            slidesPerView: changeW,
+            slidesPerGroup: 1,
+            spaceBetween: changeSpace,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.cate6-product-next',
+                prevEl: '.cate6-product-prev',
+            },
+        });
+        var swiper = new Swiper('.swiper-product-7', {
+            slidesPerView: changeW,
+            slidesPerGroup: 1,
+            spaceBetween: changeSpace,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.cate7-product-next',
+                prevEl: '.cate7-product-prev',
             },
         });
     });
