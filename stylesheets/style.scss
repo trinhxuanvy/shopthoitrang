@@ -49,7 +49,7 @@ $padding_20_0: 20px 0;
         }
         &:hover{
           .bar{
-            background-color: #9b9b23;
+            background-color: #ff9900;
           }
           .bar-1{
             width: 13px;
@@ -768,7 +768,9 @@ $padding_20_0: 20px 0;
             width: 40%;
           }
           @media screen and (max-width: 576px) {
-            width: 50%;
+            display: block;
+            margin: 0 auto 8px;
+            width: 60%;
           }
         }
         button{
