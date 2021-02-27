@@ -69,15 +69,31 @@ $(document).ready(function () {
             $(this).addClass('active');
         });
     }
-    var swiper = new Swiper('.swiper-product', {
-        slidesPerView: 4,
-        spaceBetween: 30,
-        slidesPerGroup: 1,
-        loop: true,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-      });
+    $(window).on('load resize scroll', function () {
+        var reSizeW = $(this).width();
+        var changeW = 0, changeSpace = 0;
+        if(reSizeW <= 768){
+            changeW = 2;
+            changeSpace = 10;
+        }
+        else if(reSizeW > 768){
+            changeW = 4;
+            changeSpace = 30;
+        }
+        var swiper = new Swiper('.swiper-product', {
+            slidesPerView: changeW,
+            slidesPerGroup: 1,
+            spaceBetween: changeSpace,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+        });
+    });
 });
 

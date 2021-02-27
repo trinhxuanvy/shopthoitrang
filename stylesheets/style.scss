@@ -583,7 +583,7 @@ $padding_20_60: 20px 96px;
     .product{
       .swiper-wrapper{
         .swiper-slide{
-          width: calc(92%/4) !important;
+          
         }
         @include product_item_cate();
       }
