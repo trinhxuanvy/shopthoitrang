@@ -1,6 +1,7 @@
 $padding_20_32: 20px 32px;
 $padding_20_16: 20px 16px;
 $padding_20_60: 20px 96px;
+$padding_20_0: 20px 0;
 
 .header{
   /* Padding 20 32 Res 20 16 */
@@ -508,7 +509,7 @@ $padding_20_60: 20px 96px;
     .product{
       display: flex;
       justify-content: space-between;
-      padding: 20px 0;
+      padding: $padding_20_0;
       flex-wrap: wrap;
       @include product_item_cate();
     }
@@ -521,7 +522,7 @@ $padding_20_60: 20px 96px;
         @include cate_header();
       }
       .trend{
-        padding: 20px 0;
+        padding: $padding_20_0;
         display: flex;
         justify-content: space-between;
         @media screen and (max-width: 768px) {
@@ -578,14 +579,36 @@ $padding_20_60: 20px 96px;
 
   .categories-5{
     @include padding_cate();
-    width: 100%;
     overflow: hidden;
-    .product{
-      .swiper-wrapper{
-        .swiper-slide{
+    .product-sale{
+      .header{
+        @include cate_header();
+      }
+      .product{
+        padding: $padding_20_0;
+        .swiper-wrapper{
+          @include product_item_cate();
           
         }
-        @include product_item_cate();
+        .swiper-button-next::after, .swiper-button-prev::after{
+          content: '' !important;
+        }
+        .swiper-button-next, .swiper-button-prev{
+          width: 25px !important;
+          height: 25px !important;
+          display: block;
+          background-color: #727272;
+          color: #fff;
+          opacity: 0.5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50px;
+          &:hover{
+            background-color: #252525;
+            transition: 0.2s;
+          }
+        }
       }
     }
   }
