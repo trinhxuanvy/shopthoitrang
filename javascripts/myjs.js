@@ -89,10 +89,6 @@ $(document).ready(function () {
             spaceBetween: changeSpace,
             loop: true,
             loopFillGroupWithBlank: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
             navigation: {
                 nextEl: '.cate5-product-next',
                 prevEl: '.cate5-product-prev',
@@ -104,10 +100,6 @@ $(document).ready(function () {
             spaceBetween: changeSpace,
             loop: true,
             loopFillGroupWithBlank: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
             navigation: {
                 nextEl: '.cate6-product-next',
                 prevEl: '.cate6-product-prev',
@@ -119,10 +111,6 @@ $(document).ready(function () {
             spaceBetween: changeSpace,
             loop: true,
             loopFillGroupWithBlank: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
             navigation: {
                 nextEl: '.cate7-product-next',
                 prevEl: '.cate7-product-prev',
