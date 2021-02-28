@@ -68,6 +68,7 @@ $(document).ready(function () {
             $(this).addClass('active');
         });
     }
+
     $(window).on('load resize scroll', function () {
         var reSizeW = $(this).width();
         var changeW = 0, changeSpace = 0;
@@ -118,4 +119,4 @@ $(document).ready(function () {
         });
     });
 });
-
+new WOW().init();
