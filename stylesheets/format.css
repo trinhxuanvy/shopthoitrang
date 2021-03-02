@@ -35,3 +35,8 @@ img{
 html{
     behavior: smooth;
 }
+
+iframe{
+    width: 100%;
+    height: auto;
+}
