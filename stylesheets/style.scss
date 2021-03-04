@@ -5,7 +5,10 @@ $padding_20_0: 20px 0;
 $padding_10_96: 10px 96px;
 $padding_10_16: 10px 16px;
 
-.header{
+// menu top
+.header-nav{
+  box-shadow: 0px 0px 5px rgba(0,0,0,.15);
+
   /* Padding 20 32 Res 20 16 */
   @mixin padding {
     padding: $padding_20_32;
@@ -340,6 +343,103 @@ $padding_10_16: 10px 16px;
   }
 }
 
+// ------------------------------------
+@mixin cate_header {
+  text-align: center;
+  .title{
+    font-size: 28px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+}
+
+@mixin padding_cate_0 {
+  overflow: hidden;
+  padding: $padding_10_96;
+  @media screen and (max-width: 992px) {
+    padding: $padding_10_16;
+  }
+}
+
+@mixin padding_cate_20 {
+  padding: $padding_20_60;
+  @media screen and (max-width: 992px) {
+    padding: $padding_20_16;
+  }
+}
+
+@mixin product_item_cate {
+  .item{
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    .product-name{
+      font-size: 14px;
+      padding: 24px 0 0 !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      white-space: nowrap;
+    }
+    .product-price{
+      color: #ff9900 ;
+      font-size: 14px;
+      .product-price-sale{
+        color: #bdbdbd;
+      }
+    }
+    .product-detail{
+      padding: 8px;
+      @media screen and (min-width: 992px) {
+        position: absolute;
+        transition: 0.6s;
+        top: -100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+      }
+      .fa{
+        width: 40px;
+        height: 40px;
+        background-color: #ff9900;
+        line-height: 40px;
+        border-radius: 50px;
+        color: #fff;
+        &:hover{
+          background-color: #ff6600;
+          transition: 0.2s;
+        }
+      }
+    }
+    &::before{
+      position: absolute;
+      width: 0;
+      height: 0;
+      background-color: #e7e7e72f;;
+      content: '';
+      transform: rotate(0);
+      transition: 0.6s;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50px;
+    }
+    &:hover{
+      .product-detail{
+        top: 50%;
+      }
+      &::before{
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+      }
+    }
+  }
+}
+// ------------------------------------
+
+// index.html
 .body{
   overflow: hidden;
   .categories-0{
@@ -458,101 +558,6 @@ $padding_10_16: 10px 16px;
     }
   }
 
-  // ------------------------------------
-  @mixin cate_header {
-    text-align: center;
-    .title{
-      font-size: 28px;
-      font-weight: bolder;
-      text-transform: uppercase;
-    }
-  }
-
-  @mixin padding_cate_0 {
-    overflow: hidden;
-    padding: $padding_10_96;
-    @media screen and (max-width: 992px) {
-      padding: $padding_10_16;
-    }
-  }
-
-  @mixin padding_cate_20 {
-    padding: $padding_20_60;
-    @media screen and (max-width: 992px) {
-      padding: $padding_20_16;
-    }
-  }
-
-  @mixin product_item_cate {
-    .item{
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      .product-name{
-        font-size: 14px;
-        padding: 24px 0 0 !important;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: block;
-        white-space: nowrap;
-      }
-      .product-price{
-        color: #ff9900 ;
-        font-size: 14px;
-        .product-price-sale{
-          color: #bdbdbd;
-        }
-      }
-      .product-detail{
-        padding: 8px;
-        @media screen and (min-width: 992px) {
-          position: absolute;
-          transition: 0.6s;
-          top: -100%;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100%;
-        }
-        .fa{
-          width: 40px;
-          height: 40px;
-          background-color: #ff9900;
-          line-height: 40px;
-          border-radius: 50px;
-          color: #fff;
-          &:hover{
-            background-color: #ff6600;
-            transition: 0.2s;
-          }
-        }
-      }
-      &::before{
-        position: absolute;
-        width: 0;
-        height: 0;
-        background-color: #e7e7e72f;;
-        content: '';
-        transform: rotate(0);
-        transition: 0.6s;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50px;
-      }
-      &:hover{
-        .product-detail{
-          top: 50%;
-        }
-        &::before{
-          width: 100%;
-          height: 100%;
-          opacity: 0.1;
-        }
-      }
-    }
-  }
-  // ------------------------------------
 
   // Prev - Next button
   .owl-nav{
@@ -866,6 +871,87 @@ $padding_10_16: 10px 16px;
 
 }
 
+// checkout1.html (login)
+.body{
+  .check-out{
+    @include padding_cate_20();
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+    .item{
+      width: calc(94%/2);
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+      .header{
+        @include cate_header();
+        text-align: left;
+        .title{
+          @media screen and (max-width: 992px) {
+            font-size: 18px;
+          }
+        }
+      }
+      form{
+        input{
+          width: 100%;
+          padding: 8px 16px;
+          margin: 8px 0;
+          border: 1px solid #bdbdbd;
+        }
+        input:focus{
+          box-shadow: 0px 0px 5px rgba(0,0,0,.15);
+
+        }
+      }
+      button, .sign-in{
+        display: inline-block;
+        padding: 8px 32px;
+        margin: 8px 0;
+        width: auto;
+        color: #fff;
+        background: linear-gradient(to right, #f12711, #f5af19);
+        border-radius: 50px;
+        &:hover{
+          background: linear-gradient(to right, #f5af19,#f12711);
+        }
+      }
+      .sign-in{
+        background: linear-gradient(to right, #c31432, #240b36);
+        &:hover{
+          background: linear-gradient(to right, #3a1a52,#d40e2f);
+        }
+      }
+      .para{
+        margin: 8px 0 !important;
+      }
+      .forget{
+        color: rgb(0, 174, 255);
+        padding: 8px 0;
+      }
+      .login-social{
+        padding: 20px 0;
+      }
+      .facebook, .google{
+        padding: 4px 16px;
+        margin: 4px 0;
+        display: inline-block;
+        color: #fff;
+        border-radius: 50px;
+      }
+      .facebook{
+        background: #3B5998;
+      }
+      .google{
+        background: #E02F2F;
+      }
+    }
+  }
+}
+
+// nút scroll top
 .scroll-top{
   position: fixed;
   bottom: 30px;
