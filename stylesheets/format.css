@@ -14,6 +14,7 @@ li{
 body{
     font-family: 'My-Font' !important;
     color: #333 !important;
+    overflow-x: hidden;
 }
 
 input:focus, input, button, textarea, button:focus{

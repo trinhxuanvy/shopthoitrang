@@ -82,55 +82,24 @@ $(document).ready(function () {
             $(this).addClass('active');
         });
     }
-
-    $(window).on('load resize scroll', function () {
-        var reSizeW = $(this).width();
-        var changeW = 0, changeSpace = 0;
-        if (reSizeW <= 768) {
-            changeW = 2;
-            changeSpace = 10;
-        }
-        else if (reSizeW > 768 && reSizeW <= 992) {
-            changeW = 4;
-            changeSpace = 20;
-        }
-        else{
-            changeW = 4;
-            changeSpace = 30;
-        }
-        var swiper = new Swiper('.swiper-product-5', {
-            slidesPerView: changeW,
-            slidesPerGroup: 1,
-            spaceBetween: changeSpace,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            navigation: {
-                nextEl: '.cate5-product-next',
-                prevEl: '.cate5-product-prev',
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin: 20,
+        nav:true,
+        autoplay: true,
+        dots: false,
+        responsive:{
+            0:{
+                items:2,
+                margin: 10,
             },
-        });
-        var swiper = new Swiper('.swiper-product-6', {
-            slidesPerView: changeW,
-            slidesPerGroup: 1,
-            spaceBetween: changeSpace,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            navigation: {
-                nextEl: '.cate6-product-next',
-                prevEl: '.cate6-product-prev',
+            600:{
+                items:3
             },
-        });
-        var swiper = new Swiper('.swiper-product-7', {
-            slidesPerView: changeW,
-            slidesPerGroup: 1,
-            spaceBetween: changeSpace,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            navigation: {
-                nextEl: '.cate7-product-next',
-                prevEl: '.cate7-product-prev',
-            },
-        });
-    });
+            1000:{
+                items:4
+            }
+        }
+    })
 });
 new WOW().init();
