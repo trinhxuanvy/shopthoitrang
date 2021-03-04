@@ -223,7 +223,8 @@ $padding_10_16: 10px 16px;
           z-index: 4;
           @media screen and (max-width: 992px) {
             left: -45%;
-          transform: translateX(-45%);
+            transform: translateX(-45%);
+            width: 150px;
           }
           .drop-item{
             color: #333;
