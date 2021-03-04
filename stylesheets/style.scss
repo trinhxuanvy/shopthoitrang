@@ -178,7 +178,8 @@ $padding_10_16: 10px 16px;
                 .fa{
                 background-color: #ff9900;
                 color: #fff;
-                width: 38px;
+                width: 100% !important;
+                padding: 0 16px;
                 height: 38px;
                 line-height: 38px;
               }
