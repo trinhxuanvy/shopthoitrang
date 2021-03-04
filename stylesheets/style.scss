@@ -155,7 +155,6 @@ $padding_10_16: 10px 16px;
         .form-search{
           display: flex;
           align-items: center;
-          justify-content: flex-end;
           
           @media screen and (max-width: 992px) {
             position: fixed;
@@ -218,7 +217,7 @@ $padding_10_16: 10px 16px;
           border-radius: 5px;
           transition: 0.4s;
           font-size: 14px;
-          width: 100px;
+          width: 120px;
           padding: 0 10px;
           text-align: left;
           z-index: 4;
