@@ -28,7 +28,7 @@ $(document).ready(function () {
         }
     });
     var checkUser = 0;
-    $('.header-icon .icon-user').click(function (e) { 
+    $('.header-icon .icon-user-click').click(function (e) { 
         e.preventDefault();
         if (checkUser == 0) {
             $('.header-icon .menu-drop').addClass('active-menu-drop');
