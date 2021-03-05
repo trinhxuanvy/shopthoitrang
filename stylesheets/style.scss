@@ -259,7 +259,7 @@ $padding_10_16: 10px 16px;
         position: fixed;
         left: -100% !important;
         transition: 0.4s;
-        top: 35.7%;
+        top: 30%;
         transform: translateY(-35%);
         z-index: 3;
         border-bottom: 1px solid #bdbdbd;
@@ -887,10 +887,9 @@ $padding_10_16: 10px 16px;
       }
       .header{
         @include cate_header();
-        text-align: left;
         .title{
           @media screen and (max-width: 992px) {
-            font-size: 18px;
+            font-size: 20px;
           }
         }
       }
@@ -902,15 +901,16 @@ $padding_10_16: 10px 16px;
           border: 1px solid #bdbdbd;
         }
         input:focus{
-          box-shadow: 0px 0px 5px rgba(0,0,0,.15);
+          box-shadow: 0px 0px 5px #00000026;
 
         }
       }
       button, .sign-in{
-        display: inline-block;
-        padding: 8px 32px;
-        margin: 8px 0;
-        width: auto;
+        display: block;
+        width: 150px;
+        padding: 8px 0;
+        margin: 8px auto;
+        text-align: center;
         color: #fff;
         background: linear-gradient(to right, #f12711, #f5af19);
         border-radius: 50px;
@@ -930,13 +930,17 @@ $padding_10_16: 10px 16px;
       .forget{
         color: rgb(0, 174, 255);
         padding: 8px 0;
+        display: block;
+        text-align: center;
       }
       .login-social{
         padding: 20px 0;
+        display: flex;
+        justify-content: center;
       }
       .facebook, .google{
         padding: 4px 16px;
-        margin: 4px 0;
+        margin: 4px;
         display: inline-block;
         color: #fff;
         border-radius: 50px;
@@ -947,6 +951,12 @@ $padding_10_16: 10px 16px;
       .google{
         background: #E02F2F;
       }
+    }
+  }
+  .check-out-2{
+    display: block !important;
+    .item{
+      margin: 0 auto;
     }
   }
 }
