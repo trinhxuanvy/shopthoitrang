@@ -63,12 +63,13 @@ $(document).ready(function () {
         var posHeader = $('.header-nav').position();
         var topHeader = posHeader.top;
         if ($(this).scrollTop() > topHeader) {
-            $('.header-nav').addClass('header-fixed');
+            $('.header-nav').addClass('header-prod-fixed');
         }
         else {
-            $('.header-nav').removeClass('header-fixed');
+            $('.header-nav').removeClass('header-prod-fixed');
         }
     });
+
 
     var prodDetailLink = document.querySelectorAll('.categories-3 .detail-link');
     for (let i = 0; i < prodDetailLink.length; i++) {
