@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="stylesheets/format.css">
     <link rel="stylesheet" href="stylesheets/animate.css">
     <link rel="stylesheet" href="stylesheets/owl.carousel.css">
+    <link rel="stylesheet" href="stylesheets/pagination.css">
 </head>
 
 <body>
-    <div class="header-nav-all-product">
+    <div class="header-nav">
         <div class="header-top">
             <div class="navbar-top">
                 <div class="navbar">
@@ -29,7 +30,7 @@
             </div>
             <div class="menu-top">
                 <ul class="menu-list">
-                    <li class="menu-item"><a href="index.html" class="menu-link">Trang chủ</a></li>
+                    <li class="menu-item"><a href="index.html" class="menu-link active">Trang chủ</a></li>
                     <li class="menu-item"><a href="all-product.html" class="menu-link">Áo khoác</a></li>
                     <li class="menu-item"><a href="all-product.html" class="menu-link">Quần jean</a></li>
                     <li class="menu-item"><a href="all-product.html" class="menu-link">Áo sơ mi</a></li>
@@ -38,6 +39,14 @@
                 </ul>
             </div>
             <div class="menu-icon">
+                <span class="user-login">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    <div class="box-user-login">
+                        <a href="checkout1.html" class="login">Đăng nhập</a>
+                        <a href="checkout2.html" class="sign-in">Đăng ký</a>
+                    </div>
+                </span>
                 <a href="" class="shopping-cart">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span id="baged">0</span>
@@ -67,95 +76,112 @@
                     <p class="title">Sản phẩm</p>
                 </div>
                 <div class="side-bar-menu">
-                    <a href="" class="side-bar-link wow fadeInLeft">Áo khoác <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.2s">Quần jean <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.4s">Áo sơ mi <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.6s">Túi xách <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.8s">Váy <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <a href="" class="side-bar-link wow fadeInLeft">Áo khoác</a>
+                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.2s">Quần jean</a>
+                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.4s">Áo sơ mi</a>
+                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.6s">Túi xách</a>
+                    <a href="" class="side-bar-link wow fadeInLeft" data-wow-delay="0.8s">Váy</a>
                 </div>
             </div>
             <div class="all-product">
-                <div class="header">
-                    <p class="title">Áo khoác</p>
-                    <span class="header-item"><i class="fa fa-filter" aria-hidden="true"></i> Bộ lọc</span>
+                <div class="container-header">
+                    <div class="header">
+                        <p class="title">Áo khoác</p>
+                        <span class="header-item"><i class="fa fa-filter" aria-hidden="true"></i> Bộ lọc</span>
+                        <div class="box-filter">
+                            <form action="">
+                                <div class="item">
+                                    <div class="header-box-filter">
+                                        <p class="title-box-filter">Khu vực</p>
+                                    </div>
+                                    <div class="choose">
+                                        <div class="choose-item">
+                                            <input type="radio" id="tphcm" name="area" value="tphcm">
+                                            <label for="tphcm">TPHCM</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="danang" name="area" value="danang">
+                                            <label for="danang">Đà Nẵng</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="hanoi" name="area" value="hanoi">
+                                            <label for="hanoi">Hà Nội</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="header-box-filter">
+                                        <p class="title-box-filter">Size</p>
+                                    </div>
+                                    <div class="choose">
+                                        <div class="choose-item">
+                                            <input type="radio" id="M" name="size" value="M">
+                                            <label for="M">M</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="XL" name="size" value="XL">
+                                            <label for="XL">XL</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="XXL" name="size" value="XXL">
+                                            <label for="XXL">XXL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="header-box-filter">
+                                        <p class="title-box-filter">Thương hiệu</p>
+                                    </div>
+                                    <div class="choose">
+                                        <div class="choose-item">
+                                            <input type="radio" id="gucci" name="brand" value="gucci">
+                                            <label for="gucci">Gucci</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="chanel" name="brand" value="chanel">
+                                            <label for="chanel">Chanel</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="louisvuitton" name="brand" value="louisvuitton">
+                                            <label for="louisvuitton">Louis Vuitton</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="header-box-filter">
+                                        <p class="title-box-filter">Giá</p>
+                                    </div>
+                                    <div class="choose">
+                                        <div class="choose-item">
+                                            <input type="radio" id="lower1000" name="cost" value="lower1000">
+                                            <label for="lower1000"> > 1000</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="between1000-2000" name="cost" value="between1000-2000">
+                                            <label for="between1000-2000">1000 - 2000</label>
+                                        </div>
+                                        <div class="choose-item">
+                                            <input type="radio" id="higher2000" name="cost" value="higher2000">
+                                            <label for="higher2000"> < 2000</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-choose">
+                                    <button type="reset">Thiết lập lại  </button>
+                                    <button type="submit">Áp dụng</button>
+                                </div>
+                                <button class="btn-cancel"><i class="fa fa-times" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="product">
-                    <div class="item wow fadeInLeft">
-                        <div class="product-image">
-                            <a href=""><img src="images/24_510x600.jpg" alt=""></a>
-                        </div>
-                        <p class="product-name">SM03 SƠ MI MÀU KEM PHỐI REN</p>
-                        <p class="product-price">250,000 VNĐ <span class="product-price-sale"><del>300,000
-                                    VND</del></span></p>
-                        <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="item wow fadeInUp">
-                        <div class="product-image">
-                            <a href=""><img src="images/25_510x600.jpg" alt=""></a>
-                        </div>
-                        <p class="product-name">SM08 SƠ MI MÀU DÂU PHỐI REN</p>
-                        <p class="product-price">250,000 VNĐ <span class="product-price-sale"><del>300,000
-                                    VND</del></span></p>
-                        <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="item wow fadeInDown">
-                        <div class="product-image">
-                            <a href=""><img src="images/27_510x600.jpg" alt=""></a>
-                        </div>
-                        <p class="product-name">SM08 SƠ MI ĐEN PHỐI REN</p>
-                        <p class="product-price">250,000 VNĐ <span class="product-price-sale"><del>300,000
-                                    VND</del></span></p>
-                        <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="item wow fadeInRight">
-                        <div class="product-image">
-                            <a href=""><img src="images/22_510x600.jpg" alt=""></a>
-                        </div>
-                        <p class="product-name">SM08 SƠ MI ĐEN PHỐI REN</p>
-                        <p class="product-price">250,000 VNĐ <span class="product-price-sale"><del>300,000
-                                    VND</del></span></p>
-                        <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product-image">
-                            <a href=""><img src="images/20_510x600.jpg" alt=""></a>
-                        </div>
-                        <p class="product-name">SM08 SƠ MI ĐEN PHỐI REN</p>
-                        <p class="product-price">250,000 VNĐ <span class="product-price-sale"><del>300,000
-                                    VND</del></span></p>
-                        <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="product-image">
-                            <a href=""><img src="images/21_247x300.jpg" alt=""></a>
-                        </div>
-                        <p class="product-name">SM08 SƠ MI ĐEN PHỐI REN</p>
-                        <p class="product-price">250,000 VNĐ <span class="product-price-sale"><del>300,000
-                                    VND</del></span></p>
-                        <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
+                <div class="product data-container"></div>
+                <div id="pagination-product" class="pagination"></div>
             </div>
         </div>
     </div>
+
+    
 
     <div class="categories-10">
         <div class="footer">
@@ -204,11 +230,13 @@
         </span>
     </div>
 
-    <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/swiper-bundle.min.js"></script>
     <script src="javascripts/wow.min.js"></script>
     <script src="javascripts/owl.carousel.js"></script>
+    <script src="javascripts/pagination.js"></script>
+    <script src="javascripts/jquery.lockscroll.min.js"></script>
     <script src="javascripts/myjs.js"></script>
 </body>
 
