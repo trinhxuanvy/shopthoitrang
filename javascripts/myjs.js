@@ -167,7 +167,6 @@ $(document).ready(function () {
             var options = {
                 dataSource: sources,
                 pageSize: 8,
-                showNavigator: true,
                 callback: function (sources, pagination) {
                     window.console;
 
@@ -257,6 +256,34 @@ $(document).ready(function () {
                 $('.header-nav .box-user-login').removeClass('box-user-login-active');
             }
         });
+    })
+
+    // change image
+    
+
+    // hover zoom image
+    const img = document.querySelector('.xzoom');
+    const imgZoom = document.querySelector('.xzoom-lagre');
+
+    const imgChange = document.querySelectorAll('.image-no-official .item img');
+    imgChange.forEach(item => {
+        $(item).click(function (e) { 
+            e.preventDefault();
+            $(img).attr('src', `${item.src}`);
+            $(imgZoom).css('background-image', "url('" + `${item.src}` + "')");
+        });
+    });
+
+    img.addEventListener('mousemove', function(e){
+        let width = img.offsetWidth;
+        let height = img.offsetHeight;
+        let mouseX = e.offsetX;
+        let mouseY = e.offsetY;
+        
+        let bgPosX = (mouseX / width * 100);
+        let bgPosY = (mouseY / height * 100);
+
+        imgZoom.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
     })
 });
 new WOW().init();
