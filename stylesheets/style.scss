@@ -141,6 +141,7 @@ $padding_10_16: 10px 16px;
 // menu top
 .header-nav{
   @include padding_32_16();
+  position: relative;
   
   .header-top{
     height: 60px;
@@ -1273,6 +1274,26 @@ $padding_10_16: 10px 16px;
 // pagination
 
 // product.html
+.categories-0{
+  @include padding_cate_0();
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #ebebeb4d;
+  .locate-page{
+    .locate{
+      font-size: 20px;
+      font-weight: bolder;
+      color: #ff9900;
+      text-transform: uppercase;
+      padding: 0 16px;
+      transition: 0.2s;
+      &:hover{
+        color: #ff6600;
+      }
+    }
+  }
+}
+
 .categories-1{
   @include padding_cate_0();
   padding-top: 20px;
@@ -1389,10 +1410,7 @@ $padding_10_16: 10px 16px;
         .button-group{
           display: flex;
           align-items: center;
-          input{
-            border: 1px solid #dadada;
-            padding: 8px;
-          }
+          
           .add-cart{
             padding: 8px;
             width: 200px;
@@ -1424,6 +1442,15 @@ $padding_10_16: 10px 16px;
             &:hover{
               background-color: #ff6600;
               border-color:#ff6600;
+            }
+          }
+          .choose-number{
+            position: relative;
+            display: flex;
+            input{
+              border: 1px solid #dadada;
+              padding: 8px;
+              height: 42px;
             }
           }
         }
