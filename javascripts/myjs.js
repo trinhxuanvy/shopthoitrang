@@ -175,12 +175,12 @@ $(document).ready(function () {
                     $.each(sources, function (index, item) {
                         dataHtml += `<div class="item wow fadeInUp">
                         <div class="product-image">
-                            <a href=""><img src="images/${item.image}" alt=""></a>
+                            <a href="product.html"><img src="images/${item.image}" alt=""></a>
                         </div>
                         <p class="product-name">${item.name}</p>
                         <p class="product-price">${item.price} <span class="product-price-sale"><del>${item.sale}</del></span></p>
                         <div class="product-detail">
-                            <a href=""><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="product.html"><i class="fa fa-eye" aria-hidden="true"></i></a>
                             <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         </div>
                         </div>`;
