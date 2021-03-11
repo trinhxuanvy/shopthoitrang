@@ -274,7 +274,8 @@ $(document).ready(function () {
         });
     });
 
-    img.addEventListener('mousemove', function(e){
+    $(img).mousemove(function (e) { 
+        // values: e.clientX, e.clientY, e.pageX, e.pageY
         let width = img.offsetWidth;
         let height = img.offsetHeight;
         let mouseX = e.offsetX;
@@ -284,6 +285,6 @@ $(document).ready(function () {
         let bgPosY = (mouseY / height * 100);
 
         imgZoom.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
-    })
+    });
 });
 new WOW().init();

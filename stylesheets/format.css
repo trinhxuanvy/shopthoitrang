@@ -17,7 +17,7 @@ body{
     overflow-x: hidden;
 }
 
-input:focus, input, button, textarea, button:focus{
+input:focus, input, button, textarea, select:focus, button:focus{
     outline: none;
     border: none;
     background-color: #fff;
