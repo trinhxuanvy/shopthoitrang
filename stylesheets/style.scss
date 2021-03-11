@@ -1197,6 +1197,11 @@ $padding_10_16: 10px 16px;
                   padding: 5px 10px;
                   border: 1px solid #ff9900;
                   color: #ff9900;
+                  transition: 0.2s;
+                  &:hover{
+                    background-color: #ff9900;
+                    color: #fff;
+                  }
                 }
               }
             }
