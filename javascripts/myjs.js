@@ -364,6 +364,21 @@ $(document).ready(function () {
 
         $('.table-product-cart').append(dataHtml);
 
+        var fullMoneyHTML = $(function(){
+            var fullMoney = $('.sum-money-cart .sum');
+            var sumMoney = $('.sum-cart .number');
+            var checkBoxProd = $('.check-cart input');
+            var money = 0;
+
+            for(let i = 0; i < checkBoxProd.length; i++){
+                if(checkBoxProd[i].checked == true){
+                    money += GetMoNey(sumMoney[i].innerHTML);
+                }
+            }
+        
+            $(fullMoney).html(SetMoney(money.toString()));
+        })
+
         $(function(){
             var btnMinus = document.querySelectorAll('.number-cart .minus');
             var btnAdd = document.querySelectorAll('.number-cart .add')
@@ -434,36 +449,33 @@ $(document).ready(function () {
                 $(btnDel[i]).click(function (e) { 
                     e.preventDefault();
                     $(prod[i]).remove();
+                    $(function(){
+                        var fullMoney = $('.sum-money-cart .sum');
+                        var sumMoney = $('.sum-cart .number');
+                        var checkBoxProd = $('.check-cart input');
+                        var money = 0;
+        
+                        for(let i = 0; i < checkBoxProd.length; i++){
+                            if(checkBoxProd[i].checked == true){
+                                money += GetMoNey(sumMoney[i].innerHTML);
+                            }
+                        }
+                    
+                        $(fullMoney).html(SetMoney(money.toString()));
+                    })
                 });
-            }
-
-            $(function(){
-                var fullMoney = $('.sum-money-cart .sum');
-                var sumMoney = $('.sum-cart .number');
-                var checkBoxProd = $('.check-cart input');
-                var money = 0;
-
-                for(let i = 0; i < checkBoxProd.length; i++){
-                    if(checkBoxProd[i].checked == true){
-                        money += GetMoNey(sumMoney[i].innerHTML);
-                    }
-                }
-            
-                $(fullMoney).html(SetMoney(money.toString()));
-            })
+            }       
         })
 
         $(function(){
             var checkBoxProd = $('.check-cart input');
-            var isCheckBox = 0;
             $(checkBoxProd).on('click', function () {
-                if(isCheckBox == 0){
+                
+                if(this.checked == true){
                     $(this).prop('checked', true);
-                    isCheckBox = 1;
                 }
                 else{
                     $(this).prop('checked', false);
-                    isCheckBox = 0;
                 }
 
                 $(function(){
