@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="stylesheets/format.css">
     <link rel="stylesheet" href="stylesheets/animate.css">
     <link rel="stylesheet" href="stylesheets/owl.carousel.css">
+    <link rel="stylesheet" href="stylesheets/pagination.css">
+    <link rel="stylesheet" href="stylesheets/jquery.exzoom.css">
 </head>
 
 <body>
@@ -64,82 +66,95 @@
         </div>
     </div>
 
-    <div class="body">
-        <div class="check-out check-out-2">
-            <div class="item">
-                <div class="header">
-                    <p class="title">Đăng ký</p>
+    <div class="categories-0">
+        <div class="cart">
+            <div class="header-cart">
+                <p class="title-cart">Giỏ hàng</p>
+            </div>
+            <div class="table-header-cart">
+                <div class="item check-cart">
+                    <p class="title">Chọn</p>
                 </div>
-                <form action="index.html" method="POST">
-                    <label for="name-checkout"></label>
-                    <input type="text" name="name-checkout" placeholder="Họ và tên" required>
-                    <label for="phone-checkout"></label>
-                    <input type="text" name="phone-checkout" placeholder="Điện thoại" required>
-                    <label for="email-checkout"></label>
-                    <input type="email" name="email-checkout" placeholder="Email" required>
-                    <label for="pass-checkout"></label>
-                    <input type="password" name="pass-checkout" placeholder="Mật khẩu" required>
-                    <button type="submit">Đăng ký</button>
-                </form>
-                <div class="login-social">
-                    <a href="" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
-                    <a href="" class="google"><i class="fa fa-google-plus" aria-hidden="true"></i> Google</a>
+                <div class="item product-cart">
+                    <p class="title">Sản phẩm</p>
+                </div>
+                <div class="item price-cart">
+                    <p class="title">Giá</p>
+                </div>
+                <div class="item number-cart">
+                    <p class="title">Số lượng</p>
+                </div>
+                <div class="item sum-cart">
+                    <p class="title">Tổng</p>
+                </div>
+                <div class="item delete-cart">
+                    <p class="title">Xóa</p>
                 </div>
             </div>
+            <div class="table-product-cart">
+            </div>
+            <div class="sum-money-cart">
+                <p class="title-money-cart">Tổng tiền: <span class="sum">0</span> VNĐ</p>
+            </div>
         </div>
+    </div>
+    
 
-        <div class="categories-10">
-            <div class="footer">
-                <div class="footer-item">
-                    <div class="header">
-                        <p class="title">Liên hệ</p>
-                    </div>
-                    <div class="detail">
-                        <p class="para-1 para">Chuyên các sản phẩm về da: ví Sen, dán da trang trí, bao da, ví da cho điện thoại.</p>
-                        <p class="para-2 para"><i class="fa fa-map-marker" aria-hidden="true"></i> Củ Chi, TPHCM</p>
-                        <p class="para-2 para"><i class="fa fa-phone" aria-hidden="true"></i> 0706.434.429</p>
-                        <p class="para-2 para"><i class="fa fa-envelope" aria-hidden="true"></i> trinhxuanvy1@gmail.com</p>
-                    </div>
+    <div class="categories-10">
+        <div class="footer">
+            <div class="footer-item">
+                <div class="header">
+                    <p class="title">Liên hệ</p>
                 </div>
-                <div class="footer-item">
-                    <div class="header">
-                        <p class="title">Về chúng tôi</p>
-                    </div>
+                <div class="detail">
+                    <p class="para-1 para">Chuyên các sản phẩm về da: ví Sen, dán da trang trí, bao da, ví da cho điện thoại.</p>
+                    <p class="para-2 para"><i class="fa fa-map-marker" aria-hidden="true"></i> Củ Chi, TPHCM</p>
+                    <p class="para-2 para"><i class="fa fa-phone" aria-hidden="true"></i> 0706.434.429</p>
+                    <p class="para-2 para"><i class="fa fa-envelope" aria-hidden="true"></i> trinhxuanvy1@gmail.com</p>
                 </div>
-                <div class="footer-item">
-                    <div class="header">
-                        <p class="title">Hướng dẫn</p>
-                    </div>
-                    <div class="detail">
-                        <a href="" class="detail-link">Trang chủ</a>
-                        <a href="" class="detail-link">Xu hướng</a>
-                        <a href="" class="detail-link">Tin tức</a>
-                        <a href="" class="detail-link">Sản phẩm</a>
-                        <a href="" class="detail-link">Khuyến mãi</a>
-                    </div>
+            </div>
+            <div class="footer-item">
+                <div class="header">
+                    <p class="title">Về chúng tôi</p>
                 </div>
-                <div class="footer-item">
-                    <div class="header">
-                        <p class="title">Fanpage Facebook</p>
-                    </div>
-                    <div class="fan-page">
-                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FTXVchannel%2Fposts%2F2457575697876503&width=100&show_text=false&height=262&appId" width="200" height="262" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                    </div>
+            </div>
+            <div class="footer-item">
+                <div class="header">
+                    <p class="title">Hướng dẫn</p>
+                </div>
+                <div class="detail">
+                    <a href="" class="detail-link">Trang chủ</a>
+                    <a href="" class="detail-link">Xu hướng</a>
+                    <a href="" class="detail-link">Tin tức</a>
+                    <a href="" class="detail-link">Sản phẩm</a>
+                    <a href="" class="detail-link">Khuyến mãi</a>
+                </div>
+            </div>
+            <div class="footer-item">
+                <div class="header">
+                    <p class="title">Fanpage Facebook</p>
+                </div>
+                <div class="fan-page">
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FTXVchannel%2Fposts%2F2457575697876503&width=100&show_text=false&height=262&appId" width="200" height="262" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="scroll-top wow tada">
         <span class="btn-top">
             <i class="fa fa-angle-up" aria-hidden="true"></i>
         </span>
     </div>
 
-    <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/swiper-bundle.min.js"></script>
     <script src="javascripts/wow.min.js"></script>
     <script src="javascripts/owl.carousel.js"></script>
+    <script src="javascripts/pagination.js"></script>
+    <script src="javascripts/jquery.lockscroll.min.js"></script>
+    <script src="javascripts/jquery.exzoom.js"></script>
     <script src="javascripts/myjs.js"></script>
 </body>
 

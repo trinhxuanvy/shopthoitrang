@@ -112,7 +112,7 @@ $(document).ready(function () {
             id: '1',
             image: '25_510x600.jpg',
             name: 'áo sơ mi 1',
-            price: '250,000 VNĐ',
+            price: '250,000',
             sale: '',
             link: 'test'
         },
@@ -120,7 +120,7 @@ $(document).ready(function () {
             id: '2',
             image: '25_510x600.jpg',
             name: 'áo sơ mi 2',
-            price: '200,000 VNĐ',
+            price: '200,000',
             sale: '300,000 VNĐ',
             link: 'test'
         },
@@ -128,7 +128,7 @@ $(document).ready(function () {
             id: '3',
             image: '27_510x600.jpg',
             name: 'áo sơ mi 3',
-            price: '250,000 VNĐ',
+            price: '250,000',
             sale: '',
             link: 'test'
         },
@@ -136,7 +136,7 @@ $(document).ready(function () {
             id: '4',
             image: '22_510x600.jpg',
             name: 'áo sơ mi 4',
-            price: '250,000 VNĐ',
+            price: '250,000',
             sale: '',
             link: 'test'
         },
@@ -144,7 +144,7 @@ $(document).ready(function () {
             id: '5',
             image: '20_510x600.jpg',
             name: 'áo sơ mi 5',
-            price: '250,000 VNĐ',
+            price: '250,000',
             sale: '',
             link: 'test'
         },
@@ -286,5 +286,203 @@ $(document).ready(function () {
 
         imgZoom.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
     });
+
+    function GetMoNey(money){
+        let result = '';
+        for(let i = 0; i < money.length; i++){
+            if(money[i] != ','){
+                result += money[i];
+            }
+        }
+        return parseInt(result);
+    }
+
+    function Convert(string){
+        let result = '';
+        for(let i = string.length - 1; i >= 0; i--){
+            result += string[i];
+        }
+        return result;
+    }
+
+    function SetMoney(money){
+        let result = '';
+        let len = money.length/3;
+        let count = 0;
+        for(let i = money.length - 1; i >= 0; i--){
+            result += money[i];
+            count++;
+            if(count % 3 == 0 && len > 1){
+                result += ',';
+                len--;
+            }
+        }
+        return Convert(result);
+    }
+
+
+    
+
+    
+
+    
+
+    $(function(){
+        let dataHtml = '';
+
+        $.each(data, function (indexInArray, item) { 
+             dataHtml += `<div class="product">
+             <div class="item check-cart">
+                 <input type="checkbox">
+             </div>
+             <div class="item product-cart">
+                 <div class="image-cart">
+                     <img src="images/${item.image}" alt="">
+                 </div>
+                 <div class="name-cart">
+                     <a href="" class="link-cart">${item.name}</a>
+                 </div>
+             </div>
+             <div class="item price-cart">
+                 <p class="price"><span class="number">${item.price}</span> VNĐ</p>
+             </div>
+             <div class="item number-cart">
+                 <div class="box-number">
+                     <button class="minus"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                     <input type="number" value="1" min="0" max="9999">
+                     <button class="add"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                 </div>
+             </div>
+             <div class="item sum-cart">
+                 <p class="sum"><span class="number">${item.price}</span> VNĐ</p>
+             </div>
+             <div class="item delete-cart">
+                 <button class="delete"><i class="fa fa-times" aria-hidden="true"></i></button>
+             </div>
+         </div>`
+        });
+
+        $('.table-product-cart').append(dataHtml);
+
+        $(function(){
+            var btnMinus = document.querySelectorAll('.number-cart .minus');
+            var btnAdd = document.querySelectorAll('.number-cart .add')
+            var boxNumber = document.querySelectorAll('.number-cart input');
+            var money = $('.price-cart .price .number');
+            var sumMoney = $('.sum-cart .number');
+            
+    
+            for(let i = 0; i < btnAdd.length; i++){
+                $(btnAdd[i]).click(function (e) { 
+                    e.preventDefault();
+                    let count = parseInt($(boxNumber[i]).val()) + 1;
+                    $(boxNumber[i]).val(count);
+                    $(sumMoney[i]).html(SetMoney((GetMoNey(money[i].innerHTML)*count).toString()));
+
+                    $(function(){
+                        var fullMoney = $('.sum-money-cart .sum');
+                        var sumMoney = $('.sum-cart .number');
+                        var checkBoxProd = $('.check-cart input');
+                        var money = 0;
+        
+                        for(let i = 0; i < checkBoxProd.length; i++){
+                            if(checkBoxProd[i].checked == true){
+                                money += GetMoNey(sumMoney[i].innerHTML);
+                            }
+                        }
+                    
+                        $(fullMoney).html(SetMoney(money.toString()));
+                    })
+                });
+            }
+    
+            for(let i = 0; i < btnMinus.length; i++){
+                $(btnMinus[i]).click(function (e) { 
+                    e.preventDefault();
+                    let count = parseInt($(boxNumber[i]).val()) - 1;
+                    if(count < 0){
+                        count = 0;
+                    }
+                    $(boxNumber[i]).val(count);
+                    $(sumMoney[i]).html(SetMoney((GetMoNey(money[i].innerHTML)*count).toString()));
+
+                    $(function(){
+                        var fullMoney = $('.sum-money-cart .sum');
+                        var sumMoney = $('.sum-cart .number');
+                        var checkBoxProd = $('.check-cart input');
+                        var money = 0;
+        
+                        for(let i = 0; i < checkBoxProd.length; i++){
+                            if(checkBoxProd[i].checked == true){
+                                money += GetMoNey(sumMoney[i].innerHTML);
+                            }
+                        }
+                    
+                        $(fullMoney).html(SetMoney(money.toString()));
+                    })
+                });
+            }
+
+            
+        })
+
+        $(function(){
+            var prod = $('.table-product-cart .product');
+            var btnDel = $('.delete-cart button');
+    
+            for(let i = 0; i < btnDel.length; i++){
+                $(btnDel[i]).click(function (e) { 
+                    e.preventDefault();
+                    $(prod[i]).remove();
+                });
+            }
+
+            $(function(){
+                var fullMoney = $('.sum-money-cart .sum');
+                var sumMoney = $('.sum-cart .number');
+                var checkBoxProd = $('.check-cart input');
+                var money = 0;
+
+                for(let i = 0; i < checkBoxProd.length; i++){
+                    if(checkBoxProd[i].checked == true){
+                        money += GetMoNey(sumMoney[i].innerHTML);
+                    }
+                }
+            
+                $(fullMoney).html(SetMoney(money.toString()));
+            })
+        })
+
+        $(function(){
+            var checkBoxProd = $('.check-cart input');
+            var isCheckBox = 0;
+            $(checkBoxProd).on('click', function () {
+                if(isCheckBox == 0){
+                    $(this).prop('checked', true);
+                    isCheckBox = 1;
+                }
+                else{
+                    $(this).prop('checked', false);
+                    isCheckBox = 0;
+                }
+
+                $(function(){
+                    var fullMoney = $('.sum-money-cart .sum');
+                    var sumMoney = $('.sum-cart .number');
+                    var checkBoxProd = $('.check-cart input');
+                    var money = 0;
+
+                    for(let i = 0; i < checkBoxProd.length; i++){
+                        if(checkBoxProd[i].checked == true){
+                            money += GetMoNey(sumMoney[i].innerHTML);
+                        }
+                    }
+                
+                    $(fullMoney).html(SetMoney(money.toString()));
+                })
+            });
+        })
+    })
+    
 });
 new WOW().init();
