@@ -1714,12 +1714,22 @@ $padding_10_16: 10px 16px;
             input{
               border: 1px solid #f0f0f0;
               @media screen and (max-width: 768px) {
-                width: 50%;
+                width: 40%;
               }
             }
             button{
               border: 1px solid #f0f0f0;
               transition: 0.2s;
+              
+              @media screen and (max-width: 768px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20%;
+                .fa{
+                  font-size: 10px;
+                }
+              }
               &:hover{
                 background-color: #ff9900;
                 color: #fff;
